@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "668995849223",
-    "project_id": "caress-70416",
-    "storage_bucket": "caress-70416.appspot.com"
+    "project_number": "294509863711",
+    "project_id": "equimind-b863f",
+    "storage_bucket": "equimind-b863f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:668995849223:android:37d4b4c675699a4984aea2",
+        "mobilesdk_app_id": "1:294509863711:android:6c99ac525d1a02f925862a",
         "android_client_info": {
-          "package_name": "com.example.caress"
+          "package_name": "com.project.equimind"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "668995849223-3c11b0nnitn1fud35rj4viuauh0e4unm.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAk2eWD_I9BHn8MjhqpPvis9oqi_8LeqbI"
+          "current_key": "AIzaSyDp8ZHFmweNANp1HMimyxIkxiVyyUP1Ofo"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "668995849223-3c11b0nnitn1fud35rj4viuauh0e4unm.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

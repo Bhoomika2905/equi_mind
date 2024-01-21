@@ -1,4 +1,4 @@
-package com.example.caress
+package com.project.equimind
 
 import io.flutter.embedding.android.FlutterActivity
 
