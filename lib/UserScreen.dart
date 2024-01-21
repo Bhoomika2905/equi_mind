@@ -90,30 +90,32 @@ class _UserDataState extends State<UserData> {
     HealthValue? oxygen;
     HealthValue? bodytemp;
     for (final data in healthData) {
-      if (data.type == HealthDataType.HEART_RATE) {
-        if (data.value != null) {
-          heartRate = "${data.value}";
-        }
-      }
-      if (data.type == HealthDataType.BLOOD_PRESSURE_DIASTOLIC) {
-        if (data.value != null) {
-          bpd = data.value;
-        }
-      }
-      if (data.type == HealthDataType.BLOOD_PRESSURE_SYSTOLIC) {
-        if (data.value != null) {
-          bps = data.value;
-        }
-      }
-      if (data.type == HealthDataType.BLOOD_OXYGEN) {
-        if (data.value != null) {
-          oxygen = data.value;
-        }
-      }
-      if (data.type == HealthDataType.BODY_TEMPERATURE) {
-        if (data.value != null) {
-          bodytemp = data.value;
-        }
+      switch (data.type) {
+        case HealthDataType.HEART_RATE:
+          heartRate = data.value != null ? "${data.value}" : null;
+          break;
+        case HealthDataType.BLOOD_PRESSURE_DIASTOLIC:
+          bpd = (data.value != null)
+              ? NumericHealthValue(data.value as num)
+              : null;
+          break;
+        case HealthDataType.BLOOD_PRESSURE_SYSTOLIC:
+          bps = (data.value != null)
+              ? NumericHealthValue(data.value as num)
+              : null;
+          break;
+        case HealthDataType.BLOOD_OXYGEN:
+          oxygen = (data.value != null)
+              ? NumericHealthValue(data.value as num)
+              : null;
+          break;
+        case HealthDataType.BODY_TEMPERATURE:
+          bodytemp = (data.value != null)
+              ? NumericHealthValue(data.value as num)
+              : null;
+          break;
+        default:
+          break;
       }
     }
 
@@ -622,7 +624,7 @@ class _MenuState extends State<Menu> {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              Prediction(_bodytemp!, stepx!)));
+                              Prediction(_heart_rate!, stepx!)));
                 },
               ),
               SizedBox(height: height / 2),

@@ -11,7 +11,7 @@ import 'UserScreen.dart';
 
 class Prediction extends StatefulWidget {
   Prediction(this.temp, this.steps);
-  final HealthValue temp;
+  final String temp;
   final int steps;
 
   @override
