@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:caress/Assessment.dart';
+import 'package:caress/Friendbot.dart';
 import 'package:caress/Helpline.dart';
 import 'package:caress/Prediction.dart';
 import 'package:caress/main.dart';
@@ -437,6 +438,16 @@ class _UserDataState extends State<UserData> {
             ),
           ),
         ),
+        floatingActionButton: FloatingActionButton(
+      onPressed: () {
+        // Navigation code goes here
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => ChatBotPage()), // Update this line according to your IkChatBot page class
+        );
+      },
+      child: Icon(Icons.chat), // Icon for the FAB, change as needed
+      backgroundColor: Colors.redAccent, // FAB color, adjust as needed
+    ),
       ),
     );
   }

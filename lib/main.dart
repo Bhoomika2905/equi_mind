@@ -1,5 +1,6 @@
 import 'dart:ffi';
 
+import 'package:caress/Friendbot.dart';
 import 'package:caress/HomeScreen.dart';
 import 'package:caress/IntroScreen.dart';
 import 'package:caress/WelcomeScreen.dart';
@@ -253,7 +254,9 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
           ),
-        ));
+        ),
+        
+        );
   }
 }
 

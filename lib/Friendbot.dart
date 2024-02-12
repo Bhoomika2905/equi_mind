@@ -1,19 +1,21 @@
-//import 'package:example/response.dart';
 import 'package:flutter/material.dart';
 import 'package:ikchatbot/ikchatbot.dart';
-//import 'keywords.dart';
+import 'keywords.dart';
+class ChatBotPage extends StatefulWidget {
+  const ChatBotPage({Key? key}) : super(key: key);
 
-
-
-
-class MyHomePage extends StatefulWidget {
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _ChatBotPageState createState() => _ChatBotPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  final chatBotConfig = IkChatBotConfig(
-    //SMTP Rating to your mail Settings
+class _ChatBotPageState extends State<ChatBotPage> {
+  late final IkChatBotConfig chatBotConfig;
+
+  @override
+  void initState() {
+    super.initState();
+    chatBotConfig = IkChatBotConfig(
+        //SMTP Rating to your mail Settings
     ratingIconYes: const Icon(Icons.star),
     ratingIconNo: const Icon(Icons.star_border),
     ratingIconColor: Colors.black,
@@ -44,24 +46,24 @@ class _MyHomePageState extends State<MyHomePage> {
     keywords: keywords,
     responses: responses,
     backgroundColor: Colors.white,
-    backgroundImageUrl: 'https://cdn.wallpapersafari.com/54/0/HluF7g.jpg',
+    
     initialGreeting:
-        "👋 Hello! \nWelcome to IkBot\nHow can I assist you today?",
+    "👋 Hello! \nWelcome to IkBot\nHow can I assist you today?",
     defaultResponse: "Sorry, I didn't understand your response.",
     inactivityMessage: "Is there anything else you need help with?",
     closingMessage: "This conversation will now close.",
     inputHint: 'Send a message',
-    waitingText: 'Please wait...',
-  );
+    waitingText: 'Please wait...', backgroundImage: '', useAsset: false, backgroundAssetimage: '',
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: const Text('ikChatBot Example'),
+        title: const Text('Chatbot'),
       ),
-      body: IkChatBot(config: chatBotConfig),
+      body: ikchatbot(config: chatBotConfig)
     );
   }
 }

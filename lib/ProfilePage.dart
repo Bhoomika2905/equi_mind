@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:caress/Friendbot.dart';
 import 'package:caress/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -202,6 +203,16 @@ class _ProfileState extends State<Profile> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+      onPressed: () {
+        // Navigation code goes here
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => ChatBotPage()), // Update this line according to your IkChatBot page class
+        );
+      },
+      child: Icon(Icons.chat), // Icon for the FAB, change as needed
+      backgroundColor: Colors.redAccent, // FAB color, adjust as needed
+    ),
     );
   }
 

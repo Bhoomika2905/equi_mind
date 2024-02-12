@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:caress/ArticleFormat.dart';
+import 'package:caress/Friendbot.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:intl/intl.dart';
@@ -73,6 +74,16 @@ class _ArticlesState extends State<Articles> {
                           CircularProgressIndicator(color: Colors.blueGrey))),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+      onPressed: () {
+        // Navigation code goes here
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => ChatBotPage()), // Update this line according to your IkChatBot page class
+        );
+      }, // Icon for the FAB, change as needed
+      backgroundColor: Colors.redAccent,
+      child: Icon(Icons.chat), // FAB color, adjust as needed
+    ),
     );
   }
 }
